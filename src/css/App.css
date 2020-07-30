@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+.app {
+  background-color: #fafafa;
+}
+.app-header {
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+  padding: 1.25em 1.25em 0.75em;
+  object-fit: contain;
+}
+.app-header img {
+  height: 2.5rem;
+  width: auto;
+}
+.modal-header-image {
+  height: 2.5rem;
+  width: auto;
+  padding: 0 1.25em 0.5em;
+}
+.app-signup {
+  display: flex;
+  height: 30em;
+  flex-direction: column;
+}
