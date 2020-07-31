@@ -2,6 +2,7 @@
   max-width: 500px;
   background-color: white;
   border: 1px solid lightgray;
+  border-radius: 3px;
   margin-bottom: 45px;
 }
 .post-image {
@@ -22,4 +23,15 @@
 }
 .post-avatar {
   margin-right: 0.625rem;
+}
+.post-comment-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 18px 18px 18px;
+}
+.post-comment-input {
+  width: 100%;
+}
+.post-comments {
+  padding: 0px 20px 18px 40px;
 }

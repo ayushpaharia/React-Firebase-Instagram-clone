@@ -1,0 +1,31 @@
+.image-upload {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  margin: 20px auto;
+  background-color: white;
+  min-height: 10rem;
+}
+.upload-progress-bar {
+  display: flex;
+  align-items: center;
+}
+.upload-progress-text {
+  padding-left: 10px;
+}
+.image-upload-progress {
+  margin: 12px 0;
+  width: 100%;
+}
+.image-upload-input-text {
+  margin: 12px 0;
+  width: 100%;
+}
+.image-upload-input-file {
+  margin-bottom: 12px;
+}
+.image-upload-title {
+  white-space: nowrap;
+  margin-bottom: 12px;
+}
