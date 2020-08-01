@@ -5,6 +5,7 @@ import MyModal from "./components/MyModal";
 import ImageUpload from "./components/ImageUpload";
 import Header from "./components/Header";
 import InstagramEmbed from "react-instagram-embed";
+import { FaReact } from "react-icons/fa";
 import "./css/App.css";
 
 function App() {
@@ -15,7 +16,22 @@ function App() {
   const [password, setPassword] = useState("");
   const [openSignIn, setOpenSignIn] = useState(false);
   const [open, setOpen] = useState(false);
+  //For icon rotation
+  const [rotation, setRotation] = useState(0);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (rotation === 359) {
+        setRotation(0);
+      } else {
+        setRotation(rotation + 1);
+      }
+    }, 10);
+    return () => {
+      clearInterval(interval);
+    };
+  });
+  let rotationAngle = `${rotation}deg`;
   const url =
     "https://clipart.info/images/ccovers/1522452762Instagram-logo-png-text.png";
   const signUp = (e) => {
@@ -41,7 +57,6 @@ function App() {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
-        console.log(authUser);
         setUser(authUser);
       } else setUser(null);
       return () => {
@@ -105,7 +120,14 @@ function App() {
         url={url}
         user={user}
       />
-      <h1 className="app-title">React Instagram clone</h1>
+      <div className="app-title-bar">
+        <h1 className="app-title">React Instagram clone</h1>
+        <FaReact
+          color="#0DD1F7"
+          size="2.5em"
+          style={{ transform: `rotate(${rotationAngle})` }}
+        />
+      </div>
       <div className="app-posts">
         <div className="app-posts-left">
           {posts.map(({ id, post }) => {
@@ -122,6 +144,21 @@ function App() {
           })}
         </div>
         <div className="app-posts-right">
+          <div className="image-upload-box">
+            <h3 className="Info-Title">INFO</h3>
+            <h3 className="Info">
+              Instagram Embed Feature does'nt work on Firefox. If the Page
+              freaks out the user is already created if page breaks contact me
+              at ayush.paharia.18@gmail.com Thank you.
+            </h3>
+          </div>
+          <div className="image-upload-box">
+            {user?.displayName ? (
+              <ImageUpload username={user.displayName} />
+            ) : (
+              <h3 className="image-upload-title">Login to Upload</h3>
+            )}
+          </div>
           <InstagramEmbed
             url="https://www.instagram.com/p/B6lOMO0Fv-9/"
             maxWidth={320}
@@ -135,13 +172,6 @@ function App() {
             onFailure={() => {}}
           />
           {/* {Make a post} */}
-          <div className="image-upload-box">
-            {user ? (
-              <ImageUpload username={user.displayName} />
-            ) : (
-              <h3 className="image-upload-title">Login to Upload</h3>
-            )}
-          </div>
         </div>
       </div>
     </div>

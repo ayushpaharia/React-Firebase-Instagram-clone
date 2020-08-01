@@ -1,6 +1,8 @@
 import firebase from "firebase";
 
-const firebaseApp = firebase.initializeApp({//details from you firebase app});
+const firebaseApp = firebase.initializeApp({
+  //info from your app
+});
 
 const db = firebaseApp.firestore();
 const auth = firebase.auth();

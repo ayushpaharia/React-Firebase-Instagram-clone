@@ -49,9 +49,9 @@ function Post({ postId, ImageUrl, username, user, caption }) {
         <strong>{username}</strong> {caption}
       </h4>
       <div className="post-comments">
-        {comments.map((comment) => {
+        {comments.map((comment, index) => {
           return (
-            <p>
+            <p key={index}>
               <strong>{comment.username}</strong> {comment.comment}
             </p>
           );

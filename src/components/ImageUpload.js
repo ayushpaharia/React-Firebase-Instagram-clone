@@ -18,7 +18,7 @@ function ImageUpload({ username }) {
       "state_changed",
       (snapshot) => {
         //Progress Bar
-        let progress = snapshot.bytesTransferred / snapshot.totalBytes;
+        let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
 
         setProgress(progress);
       }, //error handling
@@ -39,7 +39,7 @@ function ImageUpload({ username }) {
               username: username,
             });
             setProgress(0);
-            setTimeout(setProgressBarVisible(false), 1000);
+            setProgressBarVisible(false);
             setCaption("");
             setImage(null);
           });
@@ -60,7 +60,7 @@ function ImageUpload({ username }) {
             className="upload-progress-text"
             variant="body2"
             color="textSecondary"
-          >{`${Math.round(progress * 100)}%`}</Typography>
+          >{`${Math.round(progress)}%`}</Typography>
         </div>
       ) : null}
       <Input
