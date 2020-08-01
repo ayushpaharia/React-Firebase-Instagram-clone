@@ -6,11 +6,11 @@
 ## Introduction
 
 This project is made by using React, Firebase & Material UI
-[x] User Auth with Login & Signup
-[x] User can make a post.
-[x] User can make comments on any post.
-[x] Image upload data upload and retrival with firestore
-[x] App hosted on Firebase.
+- User Auth with Login & Signup
+- User can make a post.
+- User can make comments on any post.
+- Image upload data upload and retrival with firestore
+- App hosted on Firebase.
 
 Setup:
 - run ```npm i && npm start``` for client side to start the development server
