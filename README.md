@@ -1,4 +1,4 @@
-# React Blog App
+# React Firebase Instagram clone
 [![Canonical Badge](https://img.shields.io/badge/Live__Site-EF3125?style=for-the-badge&logo=canonical)](https://instagram-react-493be.web.app/)
 
 ![React Instagram clone](https://i.postimg.cc/8zPnvSvN/image-1.png)
